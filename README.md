@@ -53,7 +53,7 @@ cbq -u admin -p ilovepandas -e "http://localhost:8091" --script='CREATE COLLECTI
 Finally, create an index:
 
 ```bash
-cbq -u admin -p ilovepandas -e "http://localhost:8091" --script='CREATE PRIMARY INDEX ON `default`:`wasm-data`.`data`.`docs`'
+cbq -u admin -p ilovepandas -e "http://localhost:8091" --script='CREATE PRIMARY INDEX ON `default`:`wasm-data`.data.docs'
 ```
 
 Now you can insert documents:
@@ -64,5 +64,18 @@ cbq -u admin -p ilovepandas -e "http://localhost:8091" --script='INSERT INTO `wa
 cbq -u admin -p ilovepandas -e "http://localhost:8091" --script='INSERT INTO `wasm-data`.data.docs (KEY, VALUE) VALUES ("key3", { "type" : "info", "name" : "Bob Morane" });'
 ```
 
-cbq -u admin -p ilovepandas -e "http://localhost:8091" --script='SELECT * FROM `wasm-data`.data.docs'
+Query the documents
 
+```bash
+cbq -u admin -p ilovepandas -e "http://localhost:8091" --script='SELECT * FROM `wasm-data`.data.docs'
+```
+
+## Open the web admin
+
+- Open http://localhost:8091 in your browser (`user:admin pwd:ilovepandas`)
+- Choose the **Query** item in the left panel menu
+- Type this query in the query editor: 
+  ```bash
+  SELECT * FROM `wasm-data`.data.docs
+  ```
+- Click on the **"Execute"** button

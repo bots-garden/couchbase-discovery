@@ -1,12 +1,11 @@
 image: k33g/couchbase-discovery:0.0.2
 
 tasks:
-  - name: initialize
-    before: |
-      echo "🚀 before..."
-    init: |
-      echo "🚀 initialize..."
-
+#  - name: initialize
+#    before: |
+#      echo "🚀 before..."
+#    init: |
+#      echo "🚀 initialize..."
 
   - name: couchbase-setup
     command: |
