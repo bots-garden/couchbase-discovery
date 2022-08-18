@@ -21,5 +21,7 @@ cbq -u admin -p ilovepandas -e "http://localhost:8091" --script="$script5"
 cbq -u admin -p ilovepandas -e "http://localhost:8091" --script="$script6"
 cbq -u admin -p ilovepandas -e "http://localhost:8091" --script="$script7"
 
+cbq -u admin -p ilovepandas -e "http://localhost:8091" --script='CREATE SCOPE `wasm-data`.data'
+
 
 cbq -u admin -p ilovepandas -e "http://localhost:8091" --script='INSERT INTO `wasm-data`.data.docs (KEY, VALUE) VALUES ("key5", { "type" : "message", "name" : "👋 greetings 🎉" });'
