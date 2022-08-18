@@ -6,6 +6,10 @@ tasks:
       echo "🚀 before..."
     init: |
       echo "🚀 initialize..."
+
+
+  - name: couchbase-setup
+    command: |
       # ------------------------------------
       # Install Couchbase
       # ------------------------------------
