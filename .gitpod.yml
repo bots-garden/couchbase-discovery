@@ -14,13 +14,14 @@ tasks:
       sudo apt-get update
       sudo apt-get install couchbase-server-community -y
       rm ./couchbase-release-1.0-amd64.deb 
-      rm core.*
       echo "" >> $HOME/.bashrc
       echo 'export PATH="/opt/couchbase/bin:$PATH"' >> $HOME/.bashrc
       echo "" >> $HOME/.bashrc
       source ~/.bashrc
 
 ports:
+  - port: 8090-21300
+    onOpen: ignore
   - port: 8080
     visibility: public
   - port: 3000
@@ -31,6 +32,9 @@ ports:
     visibility: public
   - port: 8091
     visibility: public
+  - port: 4369
+    onOpen: ignore
+
 
 vscode:
   extensions:

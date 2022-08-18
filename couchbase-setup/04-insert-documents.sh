@@ -3,7 +3,7 @@ PATH=$PATH:/opt/couchbase/bin
 # ------------------------------------
 # Create documents
 # ------------------------------------
-# Create primari index ?
+# Create primary index ?
 script1='CREATE SCOPE `wasm-data`.data'
 script2='CREATE COLLECTION `wasm-data`.data.docs'
 script3='INSERT INTO `wasm-data`.data.docs (KEY, VALUE) VALUES ("key1", { "type" : "info", "name" : "this is an info" });'
@@ -21,3 +21,5 @@ cbq -u admin -p ilovepandas -e "http://localhost:8091" --script="$script5"
 cbq -u admin -p ilovepandas -e "http://localhost:8091" --script="$script6"
 cbq -u admin -p ilovepandas -e "http://localhost:8091" --script="$script7"
 
+
+cbq -u admin -p ilovepandas -e "http://localhost:8091" --script='INSERT INTO `wasm-data`.data.docs (KEY, VALUE) VALUES ("key5", { "type" : "message", "name" : "👋 greetings 🎉" });'
